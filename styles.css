@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@layer base {
+  html {
+    @apply box-border;
+  }
+
+  body {
+    @apply bg-[#f2f5f8] text-gray-800 mr-auto ml-auto m-0 p-0;
+  }
+
+  ul {
+    @apply m-0 p-0;
+  }
+}
