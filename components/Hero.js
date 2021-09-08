@@ -34,7 +34,7 @@ function Hero() {
         <div className="flex items-center justify-center w-full">
           <div className="relative w-[50%] h-[500px]">
             <Image
-              src="/images/deeOgbo/chesterUkandu1.jpeg"
+              src="/images/deeOgbo/chesterUkandu4.jpg"
               alt="chester ukandu"
               quality="100"
               layout="fill"
@@ -45,7 +45,7 @@ function Hero() {
             <div className="flex">
               <div className="relative w-[50%] h-[250px]">
                 <Image
-                  src="/images/deeOgbo/chesterAndWife2.jpg"
+                  src="/images/deeOgbo/chesterAndWife3.jpeg"
                   alt="chester ukandu"
                   layout="fill"
                   quality="100"
