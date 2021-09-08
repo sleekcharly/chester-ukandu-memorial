@@ -16,3 +16,13 @@
     @apply m-0 p-0;
   }
 }
+
+@layer components {
+  .nav-link {
+    @apply flex items-center space-x-2 cursor-pointer;
+  }
+
+  .span {
+    @apply relative text-base md:text-xl lg:text-2xl font-semibold text-[#800000] before:bg-[#800000] before:rounded-bl before:-bottom-1.5 before:h-0.5 before:inset-x-0 before:absolute before:transform before:origin-left before:scale-x-0 before:transition-all before:duration-200 group-hover:before:scale-x-100;
+  }
+}

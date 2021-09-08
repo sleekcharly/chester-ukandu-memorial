@@ -27,3 +27,9 @@ yarn create next-app --example with-tailwindcss with-tailwindcss-app
 ```
 
 Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+
+first son: Chimaobi Ukandu
+second son: Kelechi Ukandu
+first daughter: chinyere Ukandu
+second daughter : Chiemela Ukandu
+third daughter: Ijeoma Ukandu

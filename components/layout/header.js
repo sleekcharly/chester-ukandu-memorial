@@ -4,8 +4,8 @@ import NextLink from "next/link";
 
 function Header() {
   return (
-    <div className="bg-white py-2 px-2">
-      <nav className="flex items-center space-x-3 md:w-[97%] md:mr-auto md:ml-auto lg:w-[70%]">
+    <header className="bg-white py-2 px-2">
+      <div className="flex items-center space-x-3 md:w-[97%] md:mr-auto md:ml-auto lg:w-[90%] xl:w-[70%]">
         <div className="relative w-12 h-12 md:w-14 md:h-14 lg:h-16 lg:w-16">
           <Image
             src="/images/deeOgbo/chesterUkandu1.jpeg"
@@ -30,8 +30,8 @@ function Header() {
             Login
           </p>
         </NextLink>
-      </nav>
-    </div>
+      </div>
+    </header>
   );
 }
 

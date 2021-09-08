@@ -7,7 +7,7 @@ function Layout({ children }) {
       <Header></Header>
 
       {/* content */}
-      <div className="w-full sm:w-[95%] md:w-[80%] sm:mr-auto sm:ml-auto">
+      <div className="w-full  md:w-[97%] lg:w-[90%] xl:w-[70%] md:mr-auto md:ml-auto sm:mt-2 md:mt-3 lg:mt-8">
         {children}
       </div>
     </div>
