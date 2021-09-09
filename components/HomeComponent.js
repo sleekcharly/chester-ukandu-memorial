@@ -4,6 +4,7 @@ import { LocationMarkerIcon, ClockIcon } from "@heroicons/react/solid";
 import Hero from "./Hero";
 import NextLink from "next/link";
 import Image from "next/image";
+import Slider from "./Slider";
 
 function HomeComponent() {
   //  define component state
@@ -250,6 +251,133 @@ function HomeComponent() {
             </NextLink>
 
             {/* family section */}
+            <div>
+              <p
+                className="text-gray-600 text-xl md:text-2xl font-semibold mb-4"
+                component="h2"
+              >
+                Survived by
+              </p>
+
+              {/* immediate family */}
+              <div className="flex flex-col space-y-8 md:flex-row md:space-x-5 md:flex-wrap ">
+                <div className="flex items-center space-x-2">
+                  {/* image */}
+                  <div className="relative w-10 h-10 md:w-12 md:h-12 lg:w-[60px] lg:h-[60px]">
+                    <Image
+                      src="/images/deeOgbo/julianaUkandu.jpg"
+                      alt="Juliana Ukandu"
+                      layout="fill"
+                      quality="100"
+                      className="rounded-full"
+                    />
+                  </div>
+                  {/* meta */}
+                  <span>
+                    <p className="text-base lg:text-xl">Juliana Ukandu</p>
+                    <p className="text-gray-500">Wife</p>
+                  </span>
+                </div>
+
+                <div className="flex items-center space-x-2">
+                  {/* image */}
+                  <div className="relative w-10 h-10 md:w-12 md:h-12 lg:w-[60px] lg:h-[60px]">
+                    <Image
+                      src="/images/deeOgbo-family/firstSonAndWife.jpg"
+                      alt="Chimaobi Ukandu"
+                      layout="fill"
+                      quality="100"
+                      className="rounded-full"
+                    />
+                  </div>
+                  {/* meta */}
+                  <span>
+                    <p className="text-base lg:text-xl">Chimaobi Ukandu</p>
+                    <p className="text-gray-500">First Son</p>
+                  </span>
+                </div>
+
+                <div className="flex items-center space-x-2">
+                  {/* image */}
+                  <div className="relative w-10 h-10 md:w-12 md:h-12 lg:w-[60px] lg:h-[60px]">
+                    <Image
+                      src="/images/deeOgbo-family/firstDaughter3.jpeg"
+                      alt="Chinyere Ukandu"
+                      layout="fill"
+                      quality="100"
+                      className="rounded-full"
+                    />
+                  </div>
+                  {/* meta */}
+                  <span>
+                    <p className="text-base lg:text-xl">Chinyere Ukandu</p>
+                    <p className="text-gray-500">First daughter</p>
+                  </span>
+                </div>
+
+                <div className="flex items-center space-x-2">
+                  {/* image */}
+                  <div className="relative w-10 h-10 md:w-12 md:h-12 lg:w-[60px] lg:h-[60px]">
+                    <Image
+                      src="/images/deeOgbo-family/kelechiUkandu.jpeg"
+                      alt="Kelechi Ukandu"
+                      layout="fill"
+                      quality="100"
+                      className="rounded-full"
+                    />
+                  </div>
+                  {/* meta */}
+                  <span>
+                    <p className="text-base lg:text-xl">Kelechi Ukandu</p>
+                    <p className="text-gray-500">Second son</p>
+                  </span>
+                </div>
+
+                <div className="flex items-center space-x-2">
+                  {/* image */}
+                  <div className="relative w-10 h-10 md:w-12 md:h-12 lg:w-[60px] lg:h-[60px]">
+                    <Image
+                      src="/images/deeOgbo-family/seconddaughter.jpeg"
+                      alt="Ciemela Ukandu"
+                      layout="fill"
+                      quality="100"
+                      className="rounded-full"
+                    />
+                  </div>
+                  {/* meta */}
+                  <span>
+                    <p className="text-base lg:text-xl">Chiemela Ukandu</p>
+                    <p className="text-gray-500">Second daughter</p>
+                  </span>
+                </div>
+
+                <div className="flex items-center space-x-2">
+                  {/* image */}
+                  <div className="relative w-10 h-10 md:w-12 md:h-12 lg:w-[60px] lg:h-[60px]">
+                    <Image
+                      src="/images/deeOgbo-family/thirdDaughter.jpeg"
+                      alt="Ijeoma Ukandu"
+                      layout="fill"
+                      quality="100"
+                      className="rounded-full"
+                    />
+                  </div>
+                  {/* meta */}
+                  <span>
+                    <p className="text-base lg:text-xl">Ijeoma Ukandu</p>
+                    <p className="text-gray-500">Third daughter</p>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* grand children section */}
+            <div className="mt-10">
+              <p className="text-gray-600 text-base lg:text-xl">
+                GrandChildren
+              </p>
+              <Slider />
+            </div>
           </div>
 
           <div className="hidden md:block md:w-80"></div>
