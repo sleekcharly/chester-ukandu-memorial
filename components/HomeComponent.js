@@ -5,6 +5,7 @@ import Hero from "./Hero";
 import NextLink from "next/link";
 import Image from "next/image";
 import Slider from "./Slider";
+import NavLinks from "./NavLinks";
 
 function HomeComponent() {
   //  define component state
@@ -21,23 +22,7 @@ function HomeComponent() {
 
       {/* content */}
       <div className="mt-12">
-        <nav className="flex items-center justify-between md:space-x-8 md:justify-start md:pl-8 border-b border-gray-800 border-opacity-20 pb-4">
-          <a href="/" className="nav-link group">
-            <span className="span">About</span>
-          </a>
-
-          <a href="/events" className="nav-link group">
-            <span className="span">Events</span>
-          </a>
-
-          <a href="/obituary" className="nav-link group">
-            <span className="span">Obituary</span>
-          </a>
-
-          <a href="/memories" className="nav-link group">
-            <span className="span">Memories</span>
-          </a>
-        </nav>
+        <NavLinks />
 
         {/* main */}
 
@@ -138,25 +123,15 @@ function HomeComponent() {
               Obituary
             </p>
 
-            <p className="text-gray-600 text-xs md:text-base mb-5">
+            <p className="text-gray-600 text-xs md:text-base border-b border-gray-800 border-opacity-20 pb-10 mb-10">
               On Monday August 10, 2021 our beloved Husband, Father,
               Grandfather, Brother, Uncle and friend, Chester Onyemaechi Ukandu
               passed on to eternal glory. He is survived by his loving Wife, 5
               children, Daughter-in-laws, Son-in-law and Grandchildren.
             </p>
-
-            {/* additional details */}
-            <NextLink href="/obituary" passHref>
-              <span className="flex items-center space-x-2 cursor-pointer border-b border-gray-800 border-opacity-20 pb-10 mb-10">
-                <p className="text-[#800000] text-base lg:text-xl font-semibold">
-                  Go to full obituary
-                </p>
-                <ArrowRightIcon className="w-6 h-6 text-[#800000]" />
-              </span>
-            </NextLink>
           </div>
 
-          {/* Obituary section */}
+          {/* memories section */}
           <div>
             <p
               className="text-gray-600 text-xl md:text-2xl font-semibold mb-4"
