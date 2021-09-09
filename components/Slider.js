@@ -4,8 +4,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function Slider() {
   return (
-    <div>
-      <section className="relative mt-7 shadow-2xl max-w-screen-2xl mx-auto w-full h-[500px]">
+    <div className="mb-[50px]">
+      <section className="relative mt-7 shadow-lg max-w-screen-2xl mx-auto w-full h-[500px]">
         <Carousel
           autoPlay
           infiniteLoop
