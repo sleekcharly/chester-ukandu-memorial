@@ -94,7 +94,7 @@ function EventComponent() {
               </div>
 
               {/*  burial card */}
-              <div className="relative w-[300px] h-[250px] md:w-[600px] md:h-[400px]">
+              <div className="relative w-[300px] h-[250px] md:w-[600px] md:h-[400px] xl:w-[800px] xl:h-[600px]">
                 <Image
                   src="/images/deeOgbo/burialCard.jpeg"
                   alt="Chester ukandu burial card"

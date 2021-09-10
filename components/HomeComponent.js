@@ -106,7 +106,7 @@ function HomeComponent() {
             </div>
 
             {/* additional details */}
-            <NextLink href="/events" passHref>
+            <NextLink href="/events#events_section" passHref>
               <span className="flex items-center space-x-2 cursor-pointer border-b border-gray-800 border-opacity-20 pb-10 mb-10">
                 <p className="text-[#800000] text-base lg:text-xl font-semibold">
                   See additional details
@@ -211,7 +211,7 @@ function HomeComponent() {
           </div>
 
           {/* additional details */}
-          <NextLink href="/memories" passHref>
+          <NextLink href="/memories#memories" passHref>
             <span className="flex items-center space-x-2 cursor-pointer border-b border-gray-800 border-opacity-20 pb-10 mb-10 mt-8">
               <p className="text-[#800000] text-base lg:text-xl font-semibold">
                 See all memories
