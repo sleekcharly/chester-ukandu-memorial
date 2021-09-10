@@ -5,6 +5,7 @@ import Image from "next/image";
 import { getProviders, getSession, signIn } from "next-auth/client";
 
 export default function SignIn({ providers, session }) {
+  console.log(providers);
   return (
     <div>
       <Header />
