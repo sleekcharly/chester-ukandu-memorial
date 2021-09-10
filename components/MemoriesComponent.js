@@ -137,7 +137,9 @@ function MemoriesComponent({ session }) {
                   <textarea
                     className="w-full min-h-[200px] h-full border border-[#800000] border-opacity-40 rounded-lg break-words mb-8"
                     ref={inputRef}
-                    placeholder={`Welcome ${session.user.name}, kindly place your condolence message.`}
+                    placeholder={`Welcome ${
+                      session ? session.user.name : "friend"
+                    }, kindly place your condolence message.`}
                   ></textarea>
 
                   {/* form actions */}
