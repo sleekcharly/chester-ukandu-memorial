@@ -147,6 +147,7 @@ function MemoriesComponent({ session }) {
                     <button
                       type="submit"
                       className="w-[30%] h-14 bg-[#800000] bg-opacity-80 text-white rounded-md font-semibold text-base md:text-xl"
+                      disabled={!session && true}
                     >
                       Post condolence
                     </button>
