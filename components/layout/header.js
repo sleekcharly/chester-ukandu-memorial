@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import NextLink from "next/link";
-import { useSession, signOut, signIn } from "next-auth/react";
+import { useSession, signOut, signIn } from "next-auth/client";
 
 function Header() {
   // get user user session
-  const { data, status } = useSession();
+  const [session] = useSession();
 
   return (
     <header className="bg-white py-2 px-2">
@@ -31,9 +31,9 @@ function Header() {
 
         <button
           className="text-base md:text-lg lg:text-xl cursor-pointer"
-          onClick={() => (status === "authenticated" ? signOut() : signIn())}
+          onClick={() => (session ? signOut() : signIn())}
         >
-          {status === "authenticated" ? "Logout" : "Login"}
+          {session ? "Logout" : "Login"}
         </button>
       </div>
     </header>

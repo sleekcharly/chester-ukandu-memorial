@@ -96,16 +96,8 @@ function Hero() {
         </div>
 
         {/* Date */}
-        <div className="w-auto flex items-center">
-          <p className="text-base flex-grow">
-            21st June, 1953 - 10th August, 2021
-          </p>
-
-          <span className="flex space-x-2 items-center">
-            <HeartIcon className="w-h h-5 lg:w-6 lg:h-6 text-red-600" />
-
-            <p className="text-sm text-gray-600">Heart</p>
-          </span>
+        <div className="w-auto ">
+          <p className="text-base ">21st June, 1953 - 10th August, 2021</p>
         </div>
       </div>
 

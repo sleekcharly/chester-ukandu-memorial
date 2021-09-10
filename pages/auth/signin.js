@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../components/layout/header";
 import NextLink from "next/link";
 import Image from "next/image";
-import { getProviders, getSession, signIn } from "next-auth/react";
+import { getProviders, getSession, signIn } from "next-auth/client";
 
 export default function SignIn({ providers, session }) {
   return (

@@ -36,6 +36,7 @@ function MemoriesComponent() {
 
             {/* condolences and memories */}
             <div>
+              <a id="leave-a-message" className="hidden" />
               <p className="text-gray-600 text-lg md:text-xl font-semibold mb-3">
                 Memories & condolences
               </p>

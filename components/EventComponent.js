@@ -1,16 +1,57 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ClockIcon, LocationMarkerIcon } from "@heroicons/react/solid";
 import Hero from "./Hero";
 import NavLinks from "./NavLinks";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import axios from "axios";
 
-function EventComponent() {
+function EventComponent({ session }) {
+  // set router
+  const router = useRouter();
+
   //  define component state
   const [attending, setAttending] = useState("");
+  const [attendanceUpdate, setAttendanceUpdate] = useState("");
+  const [user, setUser] = useState({});
+
+  // get user data
+  useEffect(() => {
+    if (session) {
+      let username = session.user.name;
+
+      axios
+        .get(`/api/getUserData/${username}`)
+        .then((res) => {
+          setUser(res.data);
+          setAttending(res.data.attending);
+        })
+        .catch((err) => {
+          console.error(err.response.data);
+        });
+    }
+  }, [session]);
 
   // handle changing attending radio box.
   const handleAttendingChange = (event) => {
-    setAttending(event.target.value);
+    if (session) {
+      setAttending(event.target.value);
+
+      let userData = { attending: event.target.value, name: session.user.name };
+
+      //   update atttendance
+      axios
+        .post("/api/attending", userData)
+        .then(() => {
+          setAttendanceUpdate("success");
+        })
+        .catch((err) => {
+          console.error(err.response.data);
+          setAttendanceUpdate("failed");
+        });
+    } else {
+      router.push("/auth/signin");
+    }
   };
 
   return (
@@ -159,7 +200,6 @@ function EventComponent() {
                     width="100%"
                     height="350"
                     style={{ border: 0 }}
-                    allowfullscreen=""
                     loading="lazy"
                   ></iframe>
                 </div>

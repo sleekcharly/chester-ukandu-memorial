@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ArrowRightIcon, PhotographIcon } from "@heroicons/react/outline";
 import { LocationMarkerIcon, ClockIcon } from "@heroicons/react/solid";
 import Hero from "./Hero";
@@ -6,14 +6,55 @@ import NextLink from "next/link";
 import Image from "next/image";
 import Slider from "./Slider";
 import NavLinks from "./NavLinks";
+import { useRouter } from "next/router";
+import axios from "axios";
 
-function HomeComponent() {
+function HomeComponent({ session }) {
+  // set router
+  const router = useRouter();
+
   //  define component state
   const [attending, setAttending] = useState("");
+  const [attendanceUpdate, setAttendanceUpdate] = useState("");
+  const [user, setUser] = useState({});
+
+  // get user data
+  useEffect(() => {
+    if (session) {
+      let username = session.user.name;
+
+      axios
+        .get(`/api/getUserData/${username}`)
+        .then((res) => {
+          setUser(res.data);
+          setAttending(res.data.attending);
+        })
+        .catch((err) => {
+          console.error(err.response.data);
+        });
+    }
+  }, [session]);
 
   // handle changing attending radio box.
   const handleAttendingChange = (event) => {
-    setAttending(event.target.value);
+    if (session) {
+      setAttending(event.target.value);
+
+      let userData = { attending: event.target.value, name: session.user.name };
+
+      //   update atttendance
+      axios
+        .post("/api/attending", userData)
+        .then(() => {
+          setAttendanceUpdate("success");
+        })
+        .catch((err) => {
+          console.error(err.response.data);
+          setAttendanceUpdate("failed");
+        });
+    } else {
+      router.push("/auth/signin");
+    }
   };
 
   return (
@@ -29,7 +70,7 @@ function HomeComponent() {
         <div className="w-full mt-8">
           {/* condolence input */}
           <div className="w-full md:w-[80%] flex items-center">
-            <NextLink href="/memories" passHref>
+            <NextLink href="/memories#leave-a-message" passHref>
               <p className="text-sm p-3 text-gray-500 border border-gray-500 border-opacity-40 rounded-2xl flex-grow mr-5 cursor-pointer">
                 Share your condolences ...
               </p>
