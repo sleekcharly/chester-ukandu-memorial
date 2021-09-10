@@ -1,8 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import NextLink from "next/link";
+import { useSession, signOut, signIn } from "next-auth/react";
 
 function Header() {
+  // get user user session
+  const { data, status } = useSession();
+
   return (
     <header className="bg-white py-2 px-2">
       <div className="flex items-center space-x-3 md:w-[97%] md:mr-auto md:ml-auto lg:w-[90%] xl:w-[70%]">
@@ -25,11 +29,12 @@ function Header() {
           </p>
         </NextLink>
 
-        <NextLink href="/login" passHref>
-          <p className="text-base md:text-lg lg:text-xl cursor-pointer">
-            Login
-          </p>
-        </NextLink>
+        <button
+          className="text-base md:text-lg lg:text-xl cursor-pointer"
+          onClick={() => (status === "authenticated" ? signOut() : signIn())}
+        >
+          {status === "authenticated" ? "Logout" : "Login"}
+        </button>
       </div>
     </header>
   );
