@@ -173,16 +173,16 @@ function HomeComponent({ session }) {
           </div>
 
           {/* memories section */}
-          <div>
+          {/* <div>
             <p
               className="text-gray-600 text-xl md:text-2xl font-semibold mb-4"
               component="h2"
             >
               Memories & condolences
-            </p>
+            </p> */}
 
-            {/* memories */}
-            <div className="flex flex-col space-y-2 md:flex-row md:items-center md:space-x-2 mb-2">
+          {/* memories */}
+          {/* <div className="flex flex-col space-y-2 md:flex-row md:items-center md:space-x-2 mb-2">
               <div className="relative w-full h-[250px] md:w-[315px] md:h-[245px] lg:w-[440px] lg:h-[335px] shadow-sm hover:shadow-2xl transition-all">
                 <Image
                   src="/images/deeOgbo/chesterUkanduAndSecondSonFamily.jpg"
@@ -201,10 +201,10 @@ function HomeComponent({ session }) {
                   className="rounded-md"
                 />
               </div>
-            </div>
+            </div> */}
 
-            {/* condolence messages */}
-            <div className="flex flex-col space-y-2 md:flex-row md:items-center md:space-x-2">
+          {/* condolence messages */}
+          {/* <div className="flex flex-col space-y-2 md:flex-row md:items-center md:space-x-2">
               <div className="w-full h-[250px] md:w-[315px] md:h-[245px] lg:w-[440px] lg:h-[335px] border border-gray-100 p-2 rounded-lg shadow-sm hover:shadow-2xl transition-all">
                 <div className="flex items-center space-x-4">
                   <div className="relative w-10 h-10 md:w-12 md:h-12 lg:w-[60px] lg:h-[60px] ">
@@ -217,11 +217,11 @@ function HomeComponent({ session }) {
                     />
                   </div>
                   <p className="text-base lg:text-lg xl:text-xl">user name</p>
-                </div>
+                </div> */}
 
-                {/* message */}
+          {/* message */}
 
-                <p className="text-base text-gray-600">
+          {/* <p className="text-base text-gray-600">
                   We will miss you so much Aunty, you are one selfless woman
                   whose middle name is Care. You cared so much for your children
                 </p>
@@ -239,27 +239,27 @@ function HomeComponent({ session }) {
                     />
                   </div>
                   <p className="text-base lg:text-lg xl:text-xl">user name</p>
-                </div>
+                </div> */}
 
-                {/* message */}
+          {/* message */}
 
-                <p className="text-base text-gray-600">
+          {/* <p className="text-base text-gray-600">
                   We will miss you so much Aunty, you are one selfless woman
                   whose middle name is Care. You cared so much for your children
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* additional details */}
-          <NextLink href="/memories#memories" passHref>
+          {/* <NextLink href="/memories#memories" passHref>
             <span className="flex items-center space-x-2 cursor-pointer border-b border-gray-800 border-opacity-20 pb-10 mb-10 mt-8">
               <p className="text-[#800000] text-base lg:text-xl font-semibold">
                 See all memories
               </p>
               <ArrowRightIcon className="w-6 h-6 text-[#800000]" />
             </span>
-          </NextLink>
+          </NextLink> */}
 
           {/* family section */}
           <div>

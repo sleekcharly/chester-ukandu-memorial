@@ -3,10 +3,10 @@ import React from "react";
 import Layout from "../components/layout/layout";
 import MemoriesComponent from "../components/MemoriesComponent";
 
-function memories() {
+function memories({ session }) {
   return (
     <Layout>
-      <MemoriesComponent />
+      <MemoriesComponent session={session} />
     </Layout>
   );
 }
