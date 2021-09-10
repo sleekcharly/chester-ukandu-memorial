@@ -31,8 +31,7 @@ export default function SignIn({ providers, session }) {
                 className="bg-blue-700 text-white font-semibold rounded-lg h-12 w-[250px] sm:w-[300px] text-lg md:text-xl py-3 ml-4 md:ml-0"
                 onClick={() =>
                   signIn(provider.id, {
-                    callbackUrl:
-                      "https://chester-ukandu-memorial.vercel.app/api/auth/callback/facebook",
+                    callbackUrl: "https://chester-ukandu-memorial.vercel.app",
                   })
                 }
               >
