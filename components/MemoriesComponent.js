@@ -43,8 +43,6 @@ function MemoriesComponent({ session }) {
     return () => (mounted = false);
   }, []);
 
-  console.log(posts);
-
   //   handle submitting of messages and condolences
   const handleSubmit = (event) => {
     event.preventDefault();
