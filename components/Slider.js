@@ -41,7 +41,7 @@ function Slider() {
           <div>
             <img
               loading="lazy"
-              src="/images/deeOgbo-family/grandChildren1.jpeg"
+              src="/images/deeOgbo-family/grandChildren2.jpeg"
               alt=""
               className="w-full h-[500px] object-contain"
             />
@@ -49,11 +49,12 @@ function Slider() {
           <div>
             <img
               loading="lazy"
-              src="/images/deeOgbo-family/grandChildren2.jpeg"
+              src="/images/deeOgbo-family/grandChildren1.jpeg"
               alt=""
               className="w-full h-[500px] object-contain"
             />
           </div>
+
           <div>
             <img
               loading="lazy"
