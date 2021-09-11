@@ -122,7 +122,7 @@ function EventComponent({ session }) {
               <div className="flex items-center space-x-2 mb-4">
                 <ClockIcon className="w-6 h-6 text-gray-600" />
                 <p className="text-gray-600 text-xs md:text-base">
-                  Starts on Friday, October 15, 2021 at 10a.m. WAT
+                  Starts on Friday, October 8, 2021 at 10a.m. WAT
                 </p>
               </div>
 
