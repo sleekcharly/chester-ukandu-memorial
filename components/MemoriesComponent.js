@@ -7,12 +7,16 @@ import { PhotographIcon, BookOpenIcon } from "@heroicons/react/solid";
 import Image from "next/image";
 import axios from "axios";
 import dayjs from "dayjs";
+import { useRouter } from "next/router";
 
 function MemoriesComponent({ session }) {
   const inputRef = useRef(null);
   const filePickerRef = useRef(null);
   const [thumbnail, setThumbnail] = useState(null);
   const [posts, setPosts] = useState([]);
+
+  //   set router
+  const router = useRouter();
 
   const addImageToPost = (event) => {
     const reader = new FileReader();
@@ -47,26 +51,30 @@ function MemoriesComponent({ session }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (!inputRef.current.value) return;
+    if (session) {
+      if (!inputRef.current.value) return;
 
-    const condolenceMessage = {
-      body: inputRef.current.value,
-      memory: thumbnail,
-      username: session.user.name,
-      userImage: session.user.image,
-    };
+      const condolenceMessage = {
+        body: inputRef.current.value,
+        memory: thumbnail,
+        username: session.user.name,
+        userImage: session.user.image,
+      };
 
-    // post message
-    axios
-      .post(`/api/post-memories`, condolenceMessage)
-      .then((data) => {
-        // setThumbnail(null);
-        inputRef.current.value = "";
-        window.location.reload();
-      })
-      .catch((err) => {
-        console.error(err.response.data);
-      });
+      // post message
+      axios
+        .post(`/api/post-memories`, condolenceMessage)
+        .then((data) => {
+          // setThumbnail(null);
+          inputRef.current.value = "";
+          window.location.reload();
+        })
+        .catch((err) => {
+          console.error(err.response.data);
+        });
+    } else {
+      router.push("/auth/signin");
+    }
   };
 
   return (
@@ -147,7 +155,6 @@ function MemoriesComponent({ session }) {
                     <button
                       type="submit"
                       className="w-[30%] h-14 bg-[#800000] bg-opacity-80 text-white rounded-md font-semibold text-base md:text-xl"
-                      disabled={!session && true}
                     >
                       Post condolence
                     </button>
