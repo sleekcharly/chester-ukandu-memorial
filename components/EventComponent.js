@@ -165,7 +165,7 @@ function EventComponent({ session }) {
                 {/* map */}
                 <div className="w-[90%] mr-auto ml-auto mt-8">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d992.984664858135!2d7.38168982921723!3d5.4262903348489795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMjUnMzQuNiJOIDfCsDIyJzU2LjEiRQ!5e0!3m2!1sen!2sng!4v1631191813390!5m2!1sen!2sng"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7943.877481316983!2d7.382249999999999!3d5.426278000000021!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1042ebda6ae24b4b%3A0xee75db1e1531edcf!2zNcKwMjUnMzMuNyJOIDfCsDIyJzU4LjQiRQ!5e0!3m2!1sen!2sng!4v1631524617993!5m2!1sen!2sng"
                     width="100%"
                     height="350"
                     style={{ border: 0 }}
