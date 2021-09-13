@@ -11,8 +11,8 @@ function NavLinks() {
         <span className="span">Events</span>
       </a>
 
-      <a href="/memories#messages" className="nav-link group">
-        <span className="span">Memories</span>
+      <a href="/condolences#messages" className="nav-link group">
+        <span className="span">Condolences</span>
       </a>
     </nav>
   );

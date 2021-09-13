@@ -66,16 +66,12 @@ function EventComponent({ session }) {
 
         {/* header */}
         <section className="mt-10 border-b border-gray-800 border-opacity-20 pb-10 mb-10">
-          <p
-            className="text-gray-600 text-xl md:text-2xl font-semibold mb-4"
-            component="h2"
-          >
-            Funeral events
-          </p>
-
           <a id="events_section">
-            <p className="text-gray-600 text-xs md:text-base">
-              Please RSVP below to help the organizers prepare accordingly
+            <p
+              className="text-gray-600 text-xl md:text-2xl font-semibold mb-4"
+              component="h2"
+            >
+              Funeral events
             </p>
           </a>
         </section>
@@ -83,40 +79,13 @@ function EventComponent({ session }) {
         {/* burial details */}
         <section className="mt-10 border-b border-gray-800 border-opacity-20 pb-10 mb-10">
           <div className="flex flex-col space-y-3 lg:flex-row lg: items-center">
-            <div className="lg:flex-grow">
+            <div className="lg:flex-grow w-full">
               <p
                 className="text-blue-600 text-xl md:text-2xl font-semibold mb-5"
                 component="h3"
               >
                 Burial
               </p>
-
-              {/* rsvp */}
-              <div className="mb-6">
-                <p className="text-gray-600">Are you able to attend ?</p>
-
-                <div className="flex items-center space-x-8 mt-2">
-                  <span className="flex items-center space-x-2">
-                    <input
-                      type="radio"
-                      value="yes"
-                      checked={attending === "yes"}
-                      onChange={handleAttendingChange}
-                    />
-                    <p className="text-gray-600">Attending</p>
-                  </span>
-
-                  <span className="flex items-center space-x-2">
-                    <input
-                      type="radio"
-                      value="no"
-                      checked={attending === "no"}
-                      onChange={handleAttendingChange}
-                    />
-                    <p className="text-gray-600">Not Attending</p>
-                  </span>
-                </div>
-              </div>
 
               {/* burial time */}
               <div className="flex items-center space-x-2 mb-4">

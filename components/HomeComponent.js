@@ -70,14 +70,14 @@ function HomeComponent({ session }) {
         <div className="w-full mt-8">
           {/* condolence input */}
           <div className="w-full md:w-[80%] flex items-center">
-            <NextLink href="/memories#leave-a-message" passHref>
+            <NextLink href="/condolences#leave-a-message" passHref>
               <p className="text-sm p-3 text-gray-500 border border-gray-500 border-opacity-40 rounded-2xl flex-grow mr-5 cursor-pointer">
                 Share your condolences ...
               </p>
             </NextLink>
 
             <a
-              href="/memories"
+              href="/condolences"
               className="flex items-center space-x-2 border border-[#800000] border-opacity-40 p-2 rounded-xl"
             >
               <PhotographIcon className="w-6 h-6 text-[#800000]" />
@@ -102,33 +102,6 @@ function HomeComponent({ session }) {
             >
               Burial
             </p>
-
-            {/* rsvp */}
-            <div className="mb-6">
-              <p className="text-gray-600">Are you able to attend ?</p>
-
-              <div className="flex items-center space-x-8 mt-2">
-                <span className="flex items-center space-x-2">
-                  <input
-                    type="radio"
-                    value="yes"
-                    checked={attending === "yes"}
-                    onChange={handleAttendingChange}
-                  />
-                  <p className="text-gray-600">Attending</p>
-                </span>
-
-                <span className="flex items-center space-x-2">
-                  <input
-                    type="radio"
-                    value="no"
-                    checked={attending === "no"}
-                    onChange={handleAttendingChange}
-                  />
-                  <p className="text-gray-600">Not Attending</p>
-                </span>
-              </div>
-            </div>
 
             {/* burial time */}
             <div className="flex items-center space-x-2 mb-4">

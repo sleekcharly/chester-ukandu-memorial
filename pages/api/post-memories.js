@@ -10,11 +10,13 @@ handler.post(async (req, res) => {
 
   //   let memory = req.body.thumbnail;
 
+  // set full name
+  let fullname = `${req.body.firstName} ${req.body.lastName}`;
+
   // extract message body
   let newMessage = {
     body: req.body.body,
-    messenger: req.body.username,
-    messengerImage: req.body.userImage,
+    fullname: fullname,
     createdAt: new Date().toISOString(),
   };
 

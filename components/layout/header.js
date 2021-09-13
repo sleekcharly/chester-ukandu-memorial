@@ -1,14 +1,20 @@
 import React from "react";
 import Image from "next/image";
 import NextLink from "next/link";
-import { useSession, signOut, signIn } from "next-auth/client";
+import Head from "next/head";
 
 function Header() {
-  // get user user session
-  const [session] = useSession();
-
   return (
     <header className="bg-white py-2 px-2">
+      <Head>
+        <title>Chester Ukandu</title>
+        <meta
+          name="description"
+          content="In loving memory of Mr Chester Onyemaechi Ukandu. 21st June, 1953 - 10th August, 2021"
+        />
+        <meta property="image" content="/images/deeOgbo/chesterUkandu1.jpeg" />
+      </Head>
+
       <div className="flex items-center space-x-3 md:w-[97%] md:mr-auto md:ml-auto lg:w-[90%] xl:w-[70%]">
         <div className="relative w-12 h-12 md:w-14 md:h-14 lg:h-16 lg:w-16">
           <Image
@@ -28,13 +34,6 @@ function Header() {
             Dee Ogbo
           </p>
         </NextLink>
-
-        <button
-          className="text-base md:text-lg lg:text-xl cursor-pointer"
-          onClick={() => (session ? signOut() : signIn())}
-        >
-          {session ? "Logout" : "Login"}
-        </button>
       </div>
     </header>
   );
