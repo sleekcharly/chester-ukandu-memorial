@@ -7,6 +7,7 @@ handler.get(async (req, res) => {
   // update users collection with attending state
   await db
     .collection("messages")
+    .orderBy("createdAt", "desc")
     .get()
     .then((data) => {
       let posts = [];

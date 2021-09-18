@@ -8,9 +8,13 @@ import Image from "next/image";
 import axios from "axios";
 import dayjs from "dayjs";
 import { useRouter } from "next/router";
+// suneditor stuff
+import SunEditor from "suneditor-react";
+// Import Sun Editor's CSS File
+import "suneditor/dist/css/suneditor.min.css";
 
 function MemoriesComponent({ session }) {
-  const inputRef = useRef(null);
+  const [body, setBody] = useState("");
   const filePickerRef = useRef(null);
   const [thumbnail, setThumbnail] = useState(null);
   const [posts, setPosts] = useState([]);
@@ -62,11 +66,17 @@ function MemoriesComponent({ session }) {
     return () => (mounted = false);
   }, []);
 
+  // handle editor change
+  const handleEditorChange = (content) => {
+    const data = content;
+    setBody(data);
+  };
+
   //   handle submitting of messages and condolences
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (!inputRef.current.value) {
+    if (!body || body == "<p><br></p>") {
       setErrors({ body: "Please enter your condolence message !" });
       return;
     }
@@ -82,7 +92,7 @@ function MemoriesComponent({ session }) {
     }
 
     const condolenceMessage = {
-      body: inputRef.current.value,
+      body: body,
       memory: thumbnail,
       firstName: firstName,
       lastName: lastName,
@@ -93,7 +103,7 @@ function MemoriesComponent({ session }) {
       .post(`/api/post-memories`, condolenceMessage)
       .then((data) => {
         // setThumbnail(null);
-        inputRef.current.value = "";
+        setBody("");
         window.location.reload();
       })
       .catch((err) => {
@@ -187,13 +197,29 @@ function MemoriesComponent({ session }) {
                   </div>
 
                   <div className="mb-8">
-                    <textarea
-                      className="w-full min-h-[200px] h-full border border-[#800000] border-opacity-40 rounded-lg break-words p-2"
-                      ref={inputRef}
-                      placeholder={`Welcome ${
-                        session ? session.user.name : "friend"
-                      }, kindly place your condolence message.`}
-                    ></textarea>
+                    <SunEditor
+                      height="auto"
+                      width="auto"
+                      setContents={body}
+                      onChange={handleEditorChange}
+                      setOptions={{
+                        buttonList: [
+                          [
+                            "font",
+                            "fontSize",
+                            "bold",
+                            "italic",
+                            "blockquote",
+                            "align",
+                          ],
+                        ],
+                        minHeight: "200",
+                        defaultStyle: "font-size: 18px",
+                        placeholder:
+                          "Welcome friend kindly place your condolence message.",
+                      }}
+                    />
+
                     {errors && errors.body ? (
                       <p className="text-sm text-red-600">{errors.body}</p>
                     ) : null}
@@ -245,7 +271,15 @@ function MemoriesComponent({ session }) {
 
                     {/* message */}
                     <div className="mb-4">
-                      <p className="break-words">{post.body}</p>
+                      <SunEditor
+                        setContents={post.body}
+                        disable={true}
+                        showToolbar={false}
+                        height="auto"
+                        setOptions={{
+                          defaultStyle: "font-size: 18px",
+                        }}
+                      />
                     </div>
                     {/* date message was shared */}
                     <div>
