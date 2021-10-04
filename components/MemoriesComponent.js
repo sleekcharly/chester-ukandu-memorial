@@ -273,7 +273,6 @@ function MemoriesComponent({ session }) {
                     <div className="mb-4">
                       <SunEditor
                         setContents={post.body}
-                        disable={true}
                         showToolbar={false}
                         height="auto"
                         setOptions={{
